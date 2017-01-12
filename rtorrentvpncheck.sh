@@ -3,7 +3,7 @@
 #Uncomment if you want verbose
 set -x
 
-TO="YOUREMAILADRESS"
+TO="YOUREMAILADDRESS"
 FROM="alerts@YOURHOSTNAME.com"
 
 #Checks docker container public ip
