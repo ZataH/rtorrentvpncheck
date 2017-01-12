@@ -1,4 +1,4 @@
-I made this for UnRAID, to use with rtorrentvpn, to check if OpenVPN is up. I am running it via user-script plugin, but should work fine from crontab.
+I made this for UnRAID, to use with  binhex/arch-rtorrentvpn, to check if OpenVPN is up. I am running it via user-script plugin, but should work fine from crontab.
 If it is not, or if any variables show a empty ip-address, it will send a alert + Stop the container.
 
 Comment "set -x" if you dont want verbose mode
