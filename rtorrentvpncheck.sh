@@ -3,11 +3,13 @@
 #Uncomment if you want verbose
 set -x
 
+CONTAINERNAME=your-container-name-here
+
 TO="YOUREMAILADDRESS"
 FROM="alerts@YOURHOSTNAME.com"
 
 #Checks docker container public ip
-dockerip=`docker exec -i CONTAINERNAME wget http://ipecho.net/plain -O - -q ; echo`
+dockerip=`docker exec -i $CONTAINERNAME wget http://ipecho.net/plain -O - -q ; echo`
 
 #Check public ip of firewall
 vpncheck=`getent hosts DNS-OR-DDNS-TO-CHECK | awk '{ print $1 }' ; echo`
@@ -18,7 +20,7 @@ if [ "$dockerip" == "$vpncheck" ]; then
 echo ovpn not up
 
 #Stops the docker container
-docker stop CONTAINERNAME
+docker stop $CONTAINERNAME
 
 #If so send an alert
 echo "Subject: Rtorrent Docker VPN is DOWN
